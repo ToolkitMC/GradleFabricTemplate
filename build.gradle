@@ -1,0 +1,36 @@
+plugins {
+    id 'fabric-loom' version '1.13-SNAPSHOT'
+    id 'maven-publish'
+}
+
+version = project.mod_version
+group = "net.toolkitmc"
+
+processResources {
+    Map<String, Object> props = [
+            mod_id             : project.mod_id,
+            mod_version        : project.mod_version,
+            mod_name           : project.mod_name,
+            mod_description    : project.mod_description,
+            author             : project.author,
+            website            : project.website,
+            issues             : project.issues,
+            source_code        : project.source_code,
+            icon               : project.icon,
+            custom_provide     : project.custom_provide,
+            mc_version         : project.minecraft_version,
+            fabric_api_version : project.fabric_api_version,
+            java_version       : project.java_version,
+            main_entrypoint    : project.main_entrypoint,
+            client_entrypoint  : project.client_entrypoint,
+            server_entrypoint  : project.server_entrypoint,
+            modmenu_entrypoint : project.modmenu_entrypoint,
+            custom_entrypoint  : project.custom_entrypoint
+    ]
+
+    inputs.properties(props)
+
+    filesMatching("fabric.mod.json") {
+        expand(props)
+    }
+}
