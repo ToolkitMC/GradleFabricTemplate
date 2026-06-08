@@ -1,46 +1,46 @@
 {
   "schemaVersion": 1,
-  "id": "$(mod_id)",
-  "version": "$(mod_version)",
-  "name": "$(mod_name)",
-  "description": "$(mod_description)",
+  "id": "${mod_id}",
+  "version": "${mod_version}",
+  "name": "${mod_name}",
+  "description": "${mod_description}",
   "authors": [
-    "$(author)"
+    "${author}"
   ],
   "contact": {
-    "homepage": "$(website)",
-    "issues": "$(issues)",
-    "sources": "$(source_code)"
+    "homepage": "${website}",
+    "issues": "${issues}",
+    "sources": "${source_code}"
   },
   "license": "MIT",
-  "icon": "$(icon)",
+  "icon": "${icon}",
   "provides": [
-    "$(custom_provide)"
+    "${custom_provide}"
   ],
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.$(mod_id).$(main_entrypoint)"
+      "net.${mod_id}.${main_entrypoint}"
     ],
     "modmenu": [
-      "net.$(mod_id).$(modmenu_entrypoint)"
+      "net.${mod_id}.${modmenu_entrypoint}"
     ],
     "server": [
-      "net.$(mod_id).$(server_entrypoint)"
+      "net.${mod_id}.${server_entrypoint}"
     ],
     "client": [
-      "net.$(mod_id).$(client_entrypoint)"
+      "net.${mod_id}.${client_entrypoint}"
     ],
     "custom_entrypoint": [
-      "net.$(mod_id).$(custom_entrypoint)"
+      "net.${mod_id}.${custom_entrypoint}"
     ]
   },
   "mixins": [
-    "$(mod_id).mixins.json"
+    "${mod_id}.mixins.json"
   ],
   "depends": {
-    "fabric-api": ">=$(fabric-api-version)",
-    "minecraft": ">=$(mc_version)",
-    "java": ">=$(java_version)"
+    "fabric-api": ">=${fabric_api_version}",
+    "minecraft": ">=${mc_version}",
+    "java": ">=${java_version}"
   }
 }
